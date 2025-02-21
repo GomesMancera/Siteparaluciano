@@ -1123,62 +1123,28 @@ header.scrolled img {
 
 
 /* Melhorias na responsividade */
+/* Ajustando o menu para telas menores */
 @media (max-width: 768px) {
-    body {
-        padding-top: 70px; /* Reduz a compensação do cabeçalho fixo */
-    }
-    
-    header nav ul {
-        flex-direction: column;
-        text-align: center;
-        padding: 10px 0;
-    }
-    
-    header nav ul li {
-        display: block;
-        margin: 5px 0;
-    }
-    
-    .hero {
-        padding: 100px 15px 80px;
-        min-height: auto;
-    }
-    
-    .hero h1 {
-        font-size: 22px;
-    }
-    
-    .hero p {
-        font-size: 16px;
-    }
-    
-    .hero .btn {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-    
-    .services-grid {
-        grid-template-columns: 1fr;
+    nav ul {
+        display: flex;
+        flex-direction: row; /* Alinha em linha no mobile */
+        justify-content: center; /* Centraliza os itens */
+        align-items: center;
         gap: 15px;
+        flex-wrap: wrap; /* Evita que os itens fiquem sobrepostos */
     }
-    
-    .service-card {
-        max-width: 100%;
-        padding: 15px;
+
+    nav ul li {
+        display: inline-block; /* Mantém os itens lado a lado */
+        text-align: center;
     }
-    
-    .service-card h3 {
-        font-size: 16px;
-    }
-    
-    .service-card p {
-        font-size: 14px;
-    }
-    
-    footer {
-        padding: 15px 0;
+
+    nav ul li a {
+        font-size: 16px; /* Ajusta o tamanho da fonte para caber */
+        padding: 8px 10px;
     }
 }
+
 
 
 /* Ocultar o menu de navegação ao rolar */
@@ -1192,3 +1158,5 @@ header.scrolled img {
 nav ul {
     transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
 }
+
+

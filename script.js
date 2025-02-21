@@ -73,22 +73,30 @@ document.addEventListener("DOMContentLoaded", function () {
 // Esconder o menu ao rolar para baixo e mostrar ao rolar para cima
 document.addEventListener("DOMContentLoaded", function () {
     let lastScrollTop = 0;
-    const navMenu = document.querySelector("nav ul"); // Pega o menu de navegação
+    const navMenu = document.querySelector("nav"); // Pega o menu inteiro (nav)
+    const header = document.querySelector("header"); // Pega o cabeçalho
 
+    // Função para detectar rolagem
     window.addEventListener("scroll", function () {
         let currentScroll = window.scrollY;
 
-        if (currentScroll > lastScrollTop) {
-            // Se rolar para baixo, esconde o menu
-            navMenu.style.opacity = "0";
-            navMenu.style.transform = "translateY(-20px)";
-        } else {
-            // Se rolar para cima, exibe o menu
+        if (currentScroll === 0) {
+            // Se o usuário estiver no topo, mostra o menu
             navMenu.style.opacity = "1";
             navMenu.style.transform = "translateY(0)";
+        } else {
+            // Se rolar para baixo ou cima, esconde o menu
+            navMenu.style.opacity = "0";
+            navMenu.style.transform = "translateY(-50px)";
         }
 
         lastScrollTop = currentScroll;
     });
+
+    // Ajuste para quando a página recarregar já rolada
+    if (window.scrollY > 0) {
+        navMenu.style.opacity = "0";
+        navMenu.style.transform = "translateY(-50px)";
+    }
 });
 
