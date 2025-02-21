@@ -1192,3 +1192,68 @@ header.scrolled img {
 nav ul {
     transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
 }
+
+.whatsapp-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.whatsapp-button {
+    position: relative;
+    background-color: #25d366;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-button img {
+    width: 30px;
+    height: 30px;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}
+
+/* Notificação vermelha */
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botão de texto */
+.whatsapp-text {
+    background-color: #25d366;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background 0.3s ease-in-out;
+}
+
+.whatsapp-text:hover {
+    background-color: #1eb656;
+}
