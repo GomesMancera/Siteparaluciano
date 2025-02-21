@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         footer.innerHTML = `&copy; ${year} Mancera TI - Todos os direitos reservados.`;
     }
 
+    
     // Corrigir o problema do menu ao rolar (fixa a cor corretamente)
     window.addEventListener("scroll", function () {
         var header = document.querySelector("header");
@@ -64,4 +65,30 @@ document.addEventListener("DOMContentLoaded", function () {
             header.classList.remove("scrolled");
         }
     });
+
+
+    
 });
+
+// Esconder o menu ao rolar para baixo e mostrar ao rolar para cima
+document.addEventListener("DOMContentLoaded", function () {
+    let lastScrollTop = 0;
+    const navMenu = document.querySelector("nav ul"); // Pega o menu de navegação
+
+    window.addEventListener("scroll", function () {
+        let currentScroll = window.scrollY;
+
+        if (currentScroll > lastScrollTop) {
+            // Se rolar para baixo, esconde o menu
+            navMenu.style.opacity = "0";
+            navMenu.style.transform = "translateY(-20px)";
+        } else {
+            // Se rolar para cima, exibe o menu
+            navMenu.style.opacity = "1";
+            navMenu.style.transform = "translateY(0)";
+        }
+
+        lastScrollTop = currentScroll;
+    });
+});
+
