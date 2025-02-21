@@ -1,0 +1,1122 @@
+/* ========== RESET GLOBAL ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 100px; /* Compensa a altura do cabeçalho fixo */
+}
+
+
+/* ========== CABEÇALHO ========== */
+header {
+    background: linear-gradient(to bottom, #002F6C, #004A99);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header img {
+    max-width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+nav {
+    margin-top: 8px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #FFA500;
+}
+
+/* ========== HERO - SEÇÃO PRINCIPAL ========== */
+.hero {
+    text-align: center;
+    padding: 160px 20px 120px;
+    background: linear-gradient(135deg, #004A99, #0077CC);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px; /* Garante espaço suficiente */
+}
+
+/* Aumentando a altura do cabeçalho para ajuste */
+header {
+    background: linear-gradient(to bottom, #002F6C, #004A99);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: 100px; /* Define uma altura fixa para garantir espaçamento */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    margin-top: 20px; /* Adiciona espaçamento extra */
+}
+
+.hero p {
+    font-size: 22px;
+    max-width: 100%;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.5;
+    opacity: 0;
+    animation: slideUp 1s ease-out forwards 0.3s;
+    margin-top: 10px; /* Espaço maior para evitar sobreposição */
+}
+
+/* Ajuste para dispositivos menores */
+@media (max-width: 768px) {
+    .hero {
+        padding: 220px 20px 140px; /* Aumenta o espaçamento superior */
+        min-height: 450px;
+    }
+
+    .hero p {
+        font-size: 20px;
+        max-width: 90%;
+    }
+}
+
+
+
+/* Ajuste adicional para telas menores */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 350px;
+        padding: 180px 20px; /* Mais espaço no mobile */
+    }
+
+    .hero p {
+    font-size: 20px;
+    margin-top: 15px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+}
+
+.hero .btn {
+    display: inline-block;
+    background-color: #FFA500;
+    color: white;
+    padding: 10px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    animation: pulse 1.5s infinite alternate;
+}
+
+.hero .btn:hover {
+    transform: scale(1.1);
+    background-color: #FF8700;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+/* ========== SEÇÃO DE SERVIÇOS ========== */
+.services {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f4f7fc;
+}
+
+.services h2 {
+    font-size: 2.2rem;
+    color: #002F6C;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+.services-subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;   
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    opacity: 0;
+    animation: slideUp 1s ease-out forwards;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 320px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.service-card img {
+    width: 70px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ========== SEÇÃO DE DEPOIMENTOS ========== */
+.testimonials {
+    background: #E6E6E6;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.testimonial {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.testimonial:hover {
+    transform: scale(1.05);
+}
+
+.testimonial strong {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #004A99;
+}
+
+/* ========== ANIMAÇÕES ========== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: slideUp 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== RODAPÉ ========== */
+footer {
+    background: #002F6C;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+header {
+    background: linear-gradient(to bottom, #002F6C, #004A99);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease-in-out;
+}
+
+/* Torna o texto visível em fundos claros ao rolar */
+header.scrolled {
+    background: #002F6C; /* Cor sólida para manter a visibilidade */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #FFA500;
+}
+
+/* Mudança de cor do texto ao rolar */
+header.scrolled nav ul li a {
+    color: white;
+}
+
+/* Ajuste do cabeçalho para manter visibilidade ao rolar */
+header {
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+header.scrolled {
+    background: #002F6C; /* Cor sólida ao rolar */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+header img {
+    transition: transform 0.3s ease-in-out;
+}
+
+header.scrolled img {
+    transform: scale(0.9);
+}
+
+
+
+
+/* ================== SEÇÃO DE SERVIÇOS ================== */
+.services {
+    text-align: center;
+    padding: 100px 20px;
+    background: #f4f7fc;
+}
+
+.services h2 {
+    font-size: 2.4rem;
+    color: #002F6C;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.services-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards 0.5s;
+}
+
+/* 🎨 Layout da grade de serviços */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    justify-content: center;
+    align-items: stretch;;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* 💡 Cartão de serviço aprimorado */
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    opacity: 0;
+    animation: slideUp 1s ease-out forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+}
+
+/* 🔥 Adicionando efeito de destaque */
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 122, 255, 0.05);
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+/* 🌟 Ícones menores e melhor posicionados */
+.icon-container {
+    background: #eef5ff;
+    padding: 15px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-card img {
+    width: 60px;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 🏆 Efeito hover melhorado */
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-card:hover .icon-container {
+    transform: scale(1.1);
+}
+
+/* 📌 Títulos e textos dos serviços */
+.service-card h3 {
+    font-size: 1.4rem;
+    color: #003366;
+    margin-bottom: 12px;
+    flex-grow: 1;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 8px;
+    text-align: center;
+    min-height: 60px;
+}
+
+/* 📱 Ajuste para dispositivos menores */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        max-width: 100%;
+        min-height: auto;
+
+    }
+
+    .service-card img {
+        width: 50px !important;
+    }
+}
+
+/* 🎬 ANIMAÇÕES MELHORADAS */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+/* ========== SEÇÃO SOBRE NÓS ========== */
+.about {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f4f7fc;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.about h2 {
+    font-size: 2.4rem;
+    color: #002F6C;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.about p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 800px;
+    margin: 10px auto;
+    line-height: 1.6;
+    opacity: 0;
+    animation: slideUp 1s ease-out forwards 0.5s;
+}
+
+/* ========== SEÇÃO DE INFORMAÇÕES ========== */
+.about-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+/* Ajuste para evitar que o texto ultrapasse as caixas */
+.info-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 320px;
+    min-height: 300px; /* Garante que a altura mínima seja suficiente */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    position: relative;
+}
+
+/* Ajustando o tamanho da fonte e espaçamento para não ultrapassar os limites da caixa */
+.info-card h3 {
+    font-size: 0.1rem; /* Reduz um pouco o tamanho do título */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    font-size: 0.86rem; /* Reduz a fonte do texto descritivo */
+    color: #555;
+    line-height: 1.3;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Ajuste específico para evitar que os cartões fiquem desalinhados */
+.about-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    align-items: stretch;
+}
+
+/* Ajustando a altura mínima para manter o alinhamento */
+.team-card {
+    max-width: 250px;
+    min-height: 50px; /* Garante que todas fiquem do mesmo tamanho */
+}
+
+/* Ajustando os textos para caberem dentro das caixas da equipe */
+.team-card h3 {
+    font-size: 1rem;
+}
+
+.team-card p {
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.info-card img {
+    width: 60px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* ========== SEÇÃO NOSSA EQUIPE ========== */
+.team {
+    background: #fff;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.team h2 {
+    font-size: 2.4rem;
+    color: #002F6C;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.info-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    flex-grow: 1;
+}
+
+.team-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 250px;
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+    animation: slideUp 1s ease-out forwards 0.5s;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+}
+
+.team-card img {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-card h3 {
+    font-size: 1.2rem;
+    color: #003366;
+    margin-bottom: 5px;
+}
+
+.team-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* ========== ANIMAÇÕES ========== */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== SEÇÃO CONTATO ========== */
+.contact {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f4f7fc;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.contact h2 {
+    font-size: 2.6rem;
+    color: #002F6C;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    color: #555;
+    font-weight: 400;
+    max-width: 800px;
+    margin: 10px auto;
+    line-height: 1.6;
+    opacity: 0;
+    animation: slideUp 1s ease-out forwards 0.5s;
+}
+
+/* ========== CONTATO INFO ========== */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.info-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 320px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.info-card img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* ========== FORMULÁRIO DE CONTATO ========== */
+.contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    margin: 40px auto;
+    opacity: 0;
+    animation: slideUp 1s ease-out forwards 0.5s;
+}
+
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 120px;
+}
+
+.contact-form button {
+    background: #0077CC;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.contact-form button:hover {
+    background: #005FA3;
+    transform: scale(1.05);
+}
+
+/* ========== MAPA / LOCALIZAÇÃO ========== */
+.location {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.location iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* ========== ANIMAÇÕES ========== */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== PADRONIZAÇÃO DAS CAIXAS ========== */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.info-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 320px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.info-card img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.info-card h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 8px;
+}
+
+.info-card p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+
+/* ========== AJUSTANDO TAMANHO DAS CAIXAS ========== */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.info-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;  /* 🔥 Define um tamanho fixo para todas as caixas */
+    height: 180px; /* 🔥 Deixa todas as caixas com a mesma altura */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* 🔥 Ajustando os ícones e títulos */
+.info-card img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.info-card h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 8px;
+}
+
+/* 📌 Ajustando altura dos textos */
+.info-card p {
+    font-size: 1.1rem;
+    color: #555;
+    min-height: 40px; /* 🔥 Mantém o alinhamento dos textos */
+}
+
+/* ========== AJUSTANDO O FORMULÁRIO ========== */
+.contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    margin: 40px auto;
+    opacity: 0;
+    animation: slideUp 1s ease-out forwards 0.5s;
+}
+
+
+/* ========== MELHORIA NA ÁREA DO CLIENTE ========== */
+.client-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Centraliza verticalmente */
+    background: linear-gradient(135deg, #0057b3, #003366);
+    color: white;
+    text-align: center;
+    padding: 20px; /* Adiciona um espaçamento para evitar cortes */
+}
+
+.client-area h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    margin-bottom: 10px; /* Mantém espaçamento adequado */
+}
+
+.client-area p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 25px;
+    color: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    animation: slideUp 1s ease-out forwards 0.5s;
+}
+
+/* ========== ESTILIZAÇÃO DA CAIXA DE LOGIN ========== */
+.login-box {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+    width: 380px;
+    text-align: center;
+    opacity: 0;
+    animation: slideUp 1s ease-out forwards 0.8s;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efeito sutil ao passar o mouse */
+.login-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Título do login */
+.login-box h3 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #004A99;
+    font-weight: bold;
+}
+
+/* Inputs */
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    font-size: 1rem;
+}
+
+/* Efeito ao focar */
+.login-box input:focus {
+    border-color: #004A99;
+    box-shadow: 0 0 10px rgba(0, 74, 153, 0.3);
+}
+
+/* Botão de Login */
+.login-box button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #004A99, #002F6C);
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover do botão */
+.login-box button:hover {
+    background: linear-gradient(135deg, #002F6C, #001a44);
+    transform: scale(1.05);
+}
+
+/* Link 'Esqueceu sua senha?' */
+.forgot-password {
+    display: block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #004A99;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover do link */
+.forgot-password:hover {
+    color: #FFA500;
+    text-decoration: underline;
+}
+
+/* ========== AJUSTE RESPONSIVO PARA MOBILE ========== */
+@media (max-width: 768px) {
+    .client-area {
+        padding: 30px 15px;
+    }
+
+    .client-area h2 {
+        font-size: 2rem;
+    }
+
+    .client-area p {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+
+    .login-box {
+        width: 100%;
+        max-width: 350px;
+        padding: 25px;
+    }
+}
