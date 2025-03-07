@@ -1257,3 +1257,59 @@ nav ul {
 .whatsapp-text:hover {
     background-color: #1eb656;
 }
+
+@media (max-width: 768px) {
+    header nav ul {
+        display: flex;
+        flex-direction: row; /* Mantém os itens em linha */
+        justify-content: center; /* Centraliza o menu */
+        align-items: center; /* Mantém alinhado */
+        flex-wrap: wrap; /* Garante que os itens não estourem a tela */
+        gap: 5px; /* Reduz o espaçamento entre os itens */
+        padding: 8px 5px; /* Ajusta espaçamento interno */
+        max-width: 100%; /* Garante que o menu não ultrapasse a largura da tela */
+        overflow: hidden; /* Evita que o menu se estenda além da tela */
+    }
+
+    header nav ul li {
+        display: inline-block;
+        flex-shrink: 1; /* Permite que os itens reduzam um pouco se necessário */
+    }
+
+    header nav ul li a {
+        font-size: 13px; /* Reduz um pouco a fonte para caber melhor */
+        padding: 5px 6px; /* Ajusta o padding */
+        white-space: nowrap; /* Evita que os itens quebrem internamente */
+    }
+}
+
+@media (max-width: 768px) {
+    header nav {
+        margin-top: -5px; /* Move o menu um pouco para cima */
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: row; /* Mantém os itens do menu em linha */
+        justify-content: center; /* Centraliza o menu */
+        align-items: center; /* Mantém alinhado */
+        flex-wrap: nowrap; /* Evita quebra de linha */
+        gap: 6px; /* Reduz um pouco o espaçamento */
+        padding: 5px 5px; /* Ajusta o espaçamento interno */
+        max-width: 100%; /* Mantém dentro da tela */
+        overflow: hidden; /* Evita que itens fiquem cortados */
+    }
+
+    header nav ul li {
+        display: inline-block;
+        flex-shrink: 1; /* Evita que os itens fiquem muito grandes */
+    }
+
+    header nav ul li a {
+        font-size: 13px; /* Mantém a legibilidade */
+        padding: 5px 6px; /* Ajusta o espaço ao redor do texto */
+        white-space: nowrap; /* Evita quebra de texto */
+    }
+}
+
+
